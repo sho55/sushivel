@@ -64,6 +64,15 @@ class AdminOrdersController extends Controller
 
         event(new OrderStatusChanged($order));
 
-        return back()->with('message', 'Order Status updated successfully!');
+        return back()->with('message', 'ステータスを更新しました！');
     }
+
+    public function delete($id){
+        //削除対象レコードを検索
+        $user = \App\Order::find($id);
+        //削除
+        $user->delete();
+        //リダイレクト
+        return redirect()->to('./admin/orders');
+        }
 }

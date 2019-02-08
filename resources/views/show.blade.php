@@ -23,17 +23,17 @@
                     <hr>
 
                     <div class="order-details">
-                        <strong>Order ID:</strong> {{ $order->id }} <br>
-                        <strong>Size:</strong> {{ $order->size }} <br>
-                        <strong>Toppings:</strong> {{ $order->toppings }} <br>
+                        <div><strong>オーダー ID:</strong> {{ $order->id }} </div>
+                        <div><strong>大きさ:</strong> {{ $order->size }} </div>
+                        <div><strong>追加注文:</strong> {{ $order->toppings }} </div>
 
                         @if ($order->instructions != '')
-                            <strong>Instructions:</strong> {{ $order->instructions }}
+                            <div><strong>備考欄:</strong> {{ $order->instructions }}</div>
                         @endif
 
                     </div>
 
-                    <a class="btn btn-primary" href="{{ route('user.orders') }}">Back to Orders</a>
+                    <a class="btn btn-primary" href="{{ route('user.orders') }}">リストへ戻る</a>
 
                 </div> <!-- end panel-body -->
             </div> <!-- end panel -->

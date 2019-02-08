@@ -51,7 +51,7 @@ class UserOrdersController extends Controller
             'instructions' => $request->instructions,
         ]);
 
-        return redirect()->route('user.orders.show', $order)->with('message', 'Order received!');
+        return redirect()->route('user.orders.show', $order)->with('message', '注文完了です！');
     }
 
     /**

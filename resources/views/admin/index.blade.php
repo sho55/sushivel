@@ -16,7 +16,7 @@
 
                 @if ($orders->count() == 0)
                     <p>No orders yet.</p>
-                    <a class="btn btn-success" href="{{ route('user.orders.create') }}">Order Pizza</a>
+                    <a class="btn btn-success" href="{{ route('user.orders.create') }}">Order Sushi</a>
 
                 @else
 
@@ -25,12 +25,12 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Customer Name</th>
-                                    <th>Address</th>
-                                    <th>Size</th>
-                                    <th>Toppings</th>
-                                    <th>Instructions</th>
-                                    <th>Status</th>
+                                    <th>お客様</th>
+                                    <th>住所</th>
+                                    <th>大きさ</th>
+                                    <th>追加注文</th>
+                                    <th>備考欄</th>
+                                    <th>リアルタイム</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,6 +43,10 @@
                                         <td>{{ $order->toppings }}</td>
                                         <td>{{ $order->instructions }}</td>
                                         <td><a href="{{ route('admin.orders.edit', $order) }}">{{ $order->status->name }}</a></td>
+                                        <td><form action="./orders/delete/{{$order->id}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
+                                            </form></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -60,4 +64,19 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+        $(function(){
+        $(".btn-dell").click(function(){
+        if(confirm("本当に削除しますか？")){
+        //そのままsubmit（削除）
+        }else{
+        //cancel
+        return false;
+        }
+        });
+        });
+  </script>
 @endsection

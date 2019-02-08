@@ -22,42 +22,42 @@
                         <fieldset>
 
                             <div class="form-group m-b-lg">
-                                <label class="control-label col-lg-3">Order ID</label>
+                                <label class="control-label col-lg-3">オーダー ID</label>
                                 <div class="col-lg-8">
                                      <div class="line-up-form">{{ $order->id }}</div>
                                 </div> <!-- /controls -->
                             </div> <!-- /form-group -->
 
                             <div class="form-group m-b-lg">
-                                <label class="control-label col-lg-3">Customer</label>
+                                <label class="control-label col-lg-3">注文者</label>
                                 <div class="col-lg-8">
                                      <div class="line-up-form">{{ $order->customer->name }}</div>
                                 </div> <!-- /controls -->
                             </div> <!-- /form-group -->
 
                             <div class="form-group m-b-lg">
-                                <label class="control-label col-lg-3">Size</label>
+                                <label class="control-label col-lg-3">大きさ</label>
                                 <div class="col-lg-8">
                                      <div class="line-up-form">{{ $order->size }}</div>
                                 </div> <!-- /controls -->
                             </div> <!-- /form-group -->
 
                             <div class="form-group m-b-lg">
-                                <label class="control-label col-lg-3">Toppings</label>
+                                <label class="control-label col-lg-3">追加注文</label>
                                 <div class="col-lg-8">
                                      <div class="line-up-form">{{ $order->toppings }}</div>
                                 </div> <!-- /controls -->
                             </div> <!-- /form-group -->
 
                             <div class="form-group m-b-lg">
-                                <label class="control-label col-lg-3">Instructions</label>
+                                <label class="control-label col-lg-3">備考欄</label>
                                 <div class="col-lg-8">
                                      <div class="line-up-form">{{ $order->instructions }}</div>
                                 </div> <!-- /controls -->
                             </div> <!-- /form-group -->
 
                             <div class="form-group">
-                                <label for="status_id" class="control-label col-lg-3">Status</label>
+                                <label for="status_id" class="control-label col-lg-3">ステータス</label>
                                 <div class="controls col-lg-8">
 
                                     <select name="status_id" id="status_id" class="dropdown-style input-field input-normal">
@@ -75,7 +75,7 @@
                                 <div class="col-lg-3"></div>
                                 <div class="controls col-lg-8">
                                     <div class="form-actions">
-                                        <button type="submit" id="update-order" class="btn btn-success">Update Status</button>
+                                        <button type="submit" id="update-order" class="btn btn-success">更新する</button>
                                     </div> <!-- /form-actions -->
                                 </div>
                             </div>

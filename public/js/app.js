@@ -1846,17 +1846,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 Vue.use(vue_timeago__WEBPACK_IMPORTED_MODULE_0__["default"], {
-  name: 'Timeago',
-  locale: 'en',
+  name: "Timeago",
+  locale: "en",
   locales: {
-    'zh-CN': __webpack_require__(/*! date-fns/locale/zh_cn */ "./node_modules/date-fns/locale/zh_cn/index.js"),
-    'ja': __webpack_require__(/*! date-fns/locale/ja */ "./node_modules/date-fns/locale/ja/index.js")
+    "zh-CN": __webpack_require__(/*! date-fns/locale/zh_cn */ "./node_modules/date-fns/locale/zh_cn/index.js"),
+    ja: __webpack_require__(/*! date-fns/locale/ja */ "./node_modules/date-fns/locale/ja/index.js")
   }
 });
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['user_id'],
+  props: ["user_id"],
   data: function data() {
     return {
       notifications: []
@@ -1865,12 +1867,12 @@ Vue.use(vue_timeago__WEBPACK_IMPORTED_MODULE_0__["default"], {
   mounted: function mounted() {
     var _this = this;
 
-    console.log('notifications mounted');
-    Echo.channel('pizza-tracker').listen('OrderStatusChanged', function (order) {
+    console.log("notifications mounted");
+    Echo.channel("pizza-tracker").listen("OrderStatusChanged", function (order) {
       if (_this.user_id == order.user_id) {
         _this.notifications.unshift({
-          description: 'Order ID: ' + order.id + ' updated',
-          url: '/pizza_1/public/orders/' + order.id,
+          description: "オーダーID: " + order.id + " 更新しました",
+          url: "/pizza_1/public/orders/" + order.id,
           time: new Date()
         });
       }
@@ -44253,9 +44255,9 @@ var render = function() {
               _c("div", [
                 _c("i", { staticClass: "fa fa-exclamation-circle fa-fw" }),
                 _vm._v(
-                  " " +
+                  "\n          " +
                     _vm._s(notification.description) +
-                    "\n                    "
+                    "\n          "
                 ),
                 _c(
                   "span",
@@ -44282,7 +44284,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("i", { staticClass: "fa fa-angle-right" })
                 ])
-              : _c("div", [_vm._v("No nofitications")])
+              : _c("div", [_vm._v("新着メッセージはありません")])
           ])
         ])
       ],

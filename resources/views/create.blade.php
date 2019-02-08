@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Order Pizza</div>
+                <div class="panel-heading">Order Sushi</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -21,50 +21,50 @@
                             <form method="post" action="{{ route('user.orders.store') }}" class="form-horizontal">
                                 {{ csrf_field() }}
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Address</label>
-                                    <div class="col-sm-10"><input type="text" name="address" placeholder="Your Address" class="form-control"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">住所</label>
+                                    <div class="col-sm-10"><input type="text" name="address" placeholder="ご住所" class="form-control"></div>
                                 </div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Size</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">大きさ</label>
 
                                     <div class="col-sm-10">
-                                        <div><label> <input type="radio" checked="" value="medium" id="medium" name="size"> Medium </label></div>
-                                        <div><label> <input type="radio" value="large" id="large" name="size"> Large </label></div>
-                                        <div><label> <input type="radio" value="extra-large" id="extra-large" name="size"> Extra Large </label></div>
+                                        <div><label> <input type="radio" checked="" value="盛合せ" id="medium" name="size"> 盛合せ(2~3人前) </label></div>
+                                        <div><label> <input type="radio" value="上" id="large" name="size"> 上 (3~4人前)</label></div>
+                                        <div><label> <input type="radio" value="特上" id="extra-large" name="size"> 特上 (5~7人前)</label></div>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Toppings</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">追加注文</label>
                                     <div class="col-sm-10">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="toppings[]" value="pepperoni" id="pepperoni"> Pepperoni
+                                            <input type="checkbox" name="toppings[]" value="ビール" id="pepperoni"> ビール
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="toppings[]" value="extra-cheese" id="extra-cheese"> Extra Cheese
+                                            <input type="checkbox" name="toppings[]" value="オレンジジュース" id="extra-cheese"> オレンジジュース
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="toppings[]" value="mushrooms" id="mushrooms"> Mushrooms
+                                            <input type="checkbox" name="toppings[]" value="お茶" id="mushrooms"> お茶
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="toppings[]" value="ground-beef" id="ground-beef"> Ground Beef
+                                            <input type="checkbox" name="toppings[]" value="お吸い物" id="ground-beef"> お吸い物
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="toppings[]" value="pineapple" id="inlineCheckbox3"> Pineapple
+                                            <input type="checkbox" name="toppings[]" value="茶碗蒸し" id="inlineCheckbox3"> 茶碗蒸し
                                         </label>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Instructions</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">備考欄</label>
 
-                                    <div class="col-sm-10"><input type="text" name="instructions" placeholder="Special Instructions here" class="form-control"></div>
+                                    <div class="col-sm-10"><input type="text" name="instructions" placeholder="ご要望等ございましたらご記入ください" class="form-control"></div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-success" type="submit">Order Now</button>
+                                        <button class="btn btn-success" type="submit">注文する</button>
                                     </div>
                                 </div>
                             </form>

@@ -15,8 +15,8 @@
                     @endif
 
                 @if ($orders->count() == 0)
-                    <p>No orders yet.</p>
-                    <a class="btn btn-success" href="{{ route('user.orders.create') }}">Order Pizza</a>
+                    <p>現在、注文はありません</p>
+                    <a class="btn btn-success" href="{{ route('user.orders.create') }}">Order Sushi</a>
 
                 @else
 
@@ -28,11 +28,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Address</th>
-                                    <th>Size</th>
-                                    <th>Toppings</th>
-                                    <th>Instructions</th>
-                                    <th>Status</th>
+                                    <th>住所</th>
+                                    <th>大きさ</th>
+                                    <th>追加注文</th>
+                                    <th>備考欄</th>
+                                    <th>リアルタイム</th>
                                 </tr>
                             </thead>
                             <tbody>

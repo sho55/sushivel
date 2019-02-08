@@ -23,11 +23,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // Admin Routes - Make sure you implement an auth layer here
+Route::group(['middleware' => ['auth', 'can:admin-higher']], function () {
 Route::prefix('admin')->group(function () {
     Route::get('/orders', 'AdminOrdersController@index')->name('admin.orders');
     Route::get('/orders/edit/{order}', 'AdminOrdersController@edit')->name('admin.orders.edit');
     Route::patch('/orders/{order}', 'AdminOrdersController@update')->name('admin.orders.update');
+    Route::post('/orders/delete/{id}/', 'AdminOrdersController@delete'); 
+    });
 });
 
 Route::redirect('/admin', '/admin/orders');
-

@@ -39,10 +39,14 @@
                     <ul class="nav navbar-nav">
                         @auth
                             <li><a href="{{ route('user.orders') }}">My Orders</a></li>
-                            <li><a href="{{ route('user.orders.create') }}">Order Pizza</a></li>
+                            <li><a href="{{ route('user.orders.create') }}">Order Sushi</a></li>
 
                             {{-- Admin Routes --}}
+                            @can('admin-higher')
+                            
                             <li><a href="{{ route('admin.orders') }}">ADMIN</a></li>
+                            
+                            @endcan
                         @endauth
                     </ul>
 
@@ -84,7 +88,7 @@
         @yield('content')
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
-
+    @yield('script')
     @yield('extra-js')
 </body>
 </html>

@@ -15,27 +15,27 @@ class SeedStatusesTable extends Migration
     public function up()
     {
         Status::create([
-            'name' => 'Order Placed',
+            'name' => '注文受付済',
             'percent' => 10,
         ]);
 
         Status::create([
-            'name' => 'Prep',
+            'name' => '下準備',
             'percent' => 30,
         ]);
 
         Status::create([
-            'name' => 'Bake',
+            'name' => '握り中',
             'percent' => 50,
         ]);
 
         Status::create([
-            'name' => 'Quality Check',
+            'name' => '盛り付け',
             'percent' => 70,
         ]);
 
         Status::create([
-            'name' => 'Out for Delivery',
+            'name' => '出前済',
             'percent' => 100,
         ]);
     }
